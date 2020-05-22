@@ -19,3 +19,18 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/cards](https://hexdocs.pm/cards).
 
+## Notes
+
+#### Enter the interactive shell
+``` 
+  iex -S mix 
+```
+
+#### Run a module/file
+```
+ Cards.create_deck()
+```
+
+
+
+
