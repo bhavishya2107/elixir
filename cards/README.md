@@ -1,7 +1,5 @@
 # Cards
 
-**TODO: Add description**
-
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
@@ -15,22 +13,34 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/cards](https://hexdocs.pm/cards).
-
 ## Notes
 
 #### Enter the interactive shell
-``` 
-  iex -S mix 
+
+```
+  iex -S mix
 ```
 
 #### Run a module/file
+
 ```
  Cards.create_deck()
 ```
 
+#### Install all the dependencies
 
+```
+mix deps.get
+```
+
+#### Creating docs
+
+- install :ex_doc
+- @moduledoc """
+  Documentation Content
+  """
+- run `mix docs`
+- index.html file is created in doc folder
+- for writing docs for single methods we use @doc """ method content """ 
 
 

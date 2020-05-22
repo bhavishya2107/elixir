@@ -3,11 +3,11 @@
 
 #### Common
 
- `Modules` is elixir are collections of methods.
+* `Modules` is elixir are collections of methods.
 
- Elixir is a functional language.
+* Elixir is a functional language.
  
- Code => Elixir => Erlang => BEAM
+* Code => Elixir => Erlang => BEAM
 
 #### ENUM Module
 
@@ -25,3 +25,10 @@
 #### Pattern Matching
 
   Pattern matching is used for variable assignment.
+
+#### Pipe operator
+
+
+#### Testing in elixir
+
+
