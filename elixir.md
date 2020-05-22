@@ -72,3 +72,6 @@ Testing can be two types in elixir,
 
 - Map in elixir is similar to objects in JS or hashes in ruby
 - Map is collection of key, value pair
+
+
+#### Datatypes in Elixir
