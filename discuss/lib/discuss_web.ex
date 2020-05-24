@@ -1,21 +1,13 @@
 defmodule DiscussWeb do
-  @moduledoc """
-  The entrypoint for defining your web interface, such
-  as controllers, views, channels and so on.
+  def model do
+    quote do
+      use Ecto.Schema
 
-  This can be used in your application as:
-
-      use DiscussWeb, :controller
-      use DiscussWeb, :view
-
-  The definitions below will be executed for every view,
-  controller, etc, so keep them short and clean, focused
-  on imports, uses and aliases.
-
-  Do NOT define functions inside the quoted expressions
-  below. Instead, define any helper function in modules
-  and import those modules here.
-  """
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+    end
+  end
 
   def controller do
     quote do
