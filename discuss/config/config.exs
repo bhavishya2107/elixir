@@ -3,29 +3,25 @@
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
-
-# General application configuration
 use Mix.Config
 
+# General application configuration
 config :discuss,
   ecto_repos: [Discuss.Repo]
 
 # Configures the endpoint
-config :discuss, DiscussWeb.Endpoint,
+config :discuss, Discuss.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "OeKtokhKr94CH+qYHXdnWHRO0u4287hX3PN64AsvsqF/KwgujZdtPdVnKbxiJpM5",
-  render_errors: [view: DiscussWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Discuss.PubSub,
-  live_view: [signing_salt: "gn4TQa/j"]
+  secret_key_base: "xIR0uauaY/DMxMpkbgWIaZqjllJ5VjyczZXqBkAdVFfxeRTY8oMUmiPbrYViLsTN",
+  render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Discuss.PubSub,
+           adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Use Jason for JSON parsing in Phoenix
-config :phoenix, :json_library, Jason
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config "#{Mix.env}.exs"
