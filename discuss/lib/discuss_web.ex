@@ -1,13 +1,4 @@
 defmodule DiscussWeb do
-  def model do
-    quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-    end
-  end
 
   def controller do
     quote do

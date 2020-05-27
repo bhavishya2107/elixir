@@ -18,6 +18,9 @@ defmodule DiscussWeb.Router do
 
     get("/", PageController, :index)
     # get("/topics/new", TopicController, :new)
+    # post("/topics", TopicController, :create)
+    # get("/topics/:id/edit", TopicController, :edit)
+    # put("/topics/:id/edit", TopicController, :update)
     resources "/topics", TopicController
   end
 
