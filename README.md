@@ -77,4 +77,26 @@ Testing can be two types in elixir,
 #### Datatypes in Elixir
 
 
+=================================================================
 
+#### IO/h/i Module
+
+- IO module performs common input/output functions.
+- For help on the IO module `h(IO)` use the help module in `IEx`.
+- `IO.puts "Hello World"` it writes a string to the console.
+- ``` 
+iex> i 123
+Term
+  123
+Data type
+  Integer
+Reference modules
+  Integer
+Implemented protocols
+  IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+> Elixir is great for writing highly parallel, reliable applications.
+But to be a great language for parallel programming, a language first has to be great
+for conventional, sequential programming. In this part of the book we’ll cover how to
+write Elixir code, and explore the idioms and conventions that make Elixir so powerful.
