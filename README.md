@@ -1,6 +1,4 @@
-### Elixir Notes
-
-#### Common
+### Common Terms in Elixir
 
 - `Modules` is elixir are collections of methods.
 
@@ -61,8 +59,9 @@ Testing can be two types in elixir,
 
 - Writing @doc """ testing_expressions """
 - Writing doctest cases in test folder
+
   ```
-   test "create_deck makes 20 cards" do
+  test "create_deck makes 20 cards" do
   deck_length = length(Cards.create_deck())
   assert deck_length == 20
   end
@@ -74,17 +73,17 @@ Testing can be two types in elixir,
 - Map is collection of key, value pair
 
 
-#### Datatypes in Elixir
+---
 
-
-=================================================================
+### Elixir Notes
 
 #### IO/h/i Module
 
 - IO module performs common input/output functions.
 - For help on the IO module `h(IO)` use the help module in `IEx`.
 - `IO.puts "Hello World"` it writes a string to the console.
-`
+
+```
 iex> i 123
 Term
   123
@@ -94,10 +93,45 @@ Reference modules
   Integer
 Implemented protocols
   IEx.Info, Inspect, List.Chars, String.Chars
-`
+```
 
 > Elixir is great for writing highly parallel, reliable applications.
 But to be a great language for parallel programming, a language first has to be great
 for conventional, sequential programming. In this part of the book we’ll cover how to
 write Elixir code, and explore the idioms and conventions that make Elixir so powerful.
+
+#### Pattern Matching in Elixir
+
+- There is no assignment operator in elixir, elixir call the `=` symbol the `match operator`.
+- As there is no assignment the `=` operator represents an assertion.
+
+```
+iex> list = [1, 2, [ 3, 4, 5 ] ]
+[1, 2, [3, 4, 5]]
+iex> [a, b, c ] = list
+[1, 2, [3, 4, 5]]
+iex> a
+1
+iex> b
+2
+iex> c
+[3, 4, 5]
+```
+
+- The `match operator` not only is used for simple values but it is also useful for destructuring complex data types.
+- If you don't want to capture a value during the match, you can ignore it by using the `_` operator.
+- If you want to use the existing value of a variable in the pattern.Prefix it with a `^` opeartor called the `pin operator`.
+
+```
+iex> a = 1
+1
+iex> [^a, 2, 3 ] = [ 1, 2, 3 ]
+# use existing value of a
+[1, 2, 3]
+iex> a = 2
+2
+iex> [ ^a, 2 ] = [ 1, 2 ]
+** (MatchError) no match of right hand side value: [1, 2]
+```
+
 
