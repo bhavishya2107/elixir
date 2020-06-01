@@ -134,4 +134,100 @@ iex> [ ^a, 2 ] = [ 1, 2 ]
 ** (MatchError) no match of right hand side value: [1, 2]
 ```
 
+#### Immutable Data
+
+- In Elixir data is immutable.
+  For Example,
+  Let there be a `list` `[1,2,3]` if we want to add 100 to each of its item.Elixir will make a copy of the original instead of mutating the `list`.
+- The Idea of Elixir is to tranfer and transform data.
+```
+iex> list1 = [ 3, 2, 1 ]
+[3, 2, 1]
+iex> list2 = [ 4 | list1 ]
+[4, 3, 2, 1]
+```
+- Example,
+```
+iex> name = "elixir"
+"elixir"
+iex> cap_name = String.capitalize name
+"Elixir"
+iex> name
+"elixir"
+```
+
+#### Data Types in Elixir
+
+Elixir’s built-in types are
+
+• Value types:
+– Integers
+– Floating-point numbers
+– Atoms
+  - Atoms are constants that represent something’s name.
+  - We write them using a leading colon ( : ),
+– Ranges
+  Ranges are represented as start..end, where start and end are integers.
+– Regular expressions
+
+• System types:
+– PIDs and ports
+  - A PID is a reference to a local or remote process, and a port is a reference to a resource (typically external to the application) that you’ll be reading or writing.
+  - The PID of the current process is available by calling self. A new PID is created when you spawn a new process.
+– References
+
+• Collection types:
+– Tuples
+    A tuple is an ordered collection of values. As with all Elixir data structures,once created a tuple cannot be modified.
+
+– Lists
+
+  - These are linkedList very different from an array.
+
+```
+# Elixir has some operators that work specifically on lists:
+iex> [ 1, 2, 3 ] ++ [ 4, 5, 6 ]
+[1, 2, 3, 4, 5, 6]
+iex> [1, 2, 3, 4] -- [2, 4]
+[1, 3]
+iex> 1 in [1,2,3,4]
+true
+iex> "wombat" in [1, 2, 3, 4]
+false
+```
+– Maps
+– Binaries
+
+#### Anonymous Functions
+
+An anonymous function is created using the fn keyword.
+```
+fn
+parameter-list -> body
+parameter-list -> body ...
+end
+```
+
+```
+iex> multiply = fn (a,b) -> (a * b) end 
+#Function<43.97283095/2 in :erl_eval.expr/5>
+iex)> multiply.(1, 2)                   
+2
+iex> multiply.(4,6)                    
+24
+iex> list_concat = fn ([a,b],[c,d]) -> [a,b] ++ [c,d] end
+#Function<43.97283095/2 in :erl_eval.expr/5>
+iex> list_concat.([1,2],[3,4])
+[1, 2, 3, 4]
+iex> sum_2 = fn (a,b,c) -> a + b + c end
+#Function<42.97283095/3 in :erl_eval.expr/5>
+iex> sum_2.(4,3,4)
+11
+iex> pair = fn ({a,b}) -> [a,b] end
+#Function<44.97283095/1 in :erl_eval.expr/5>
+iex> pair.({1234,4321})
+[1234, 4321]
+```
+
+
 
